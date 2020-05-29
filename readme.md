@@ -1,11 +1,15 @@
-在原版的基础上实现了加密。用户名和密码在 `index.js` 的如下字段指定即可：
-```
-const NAME = "admin"
-const PASS = "password"
-```
+<!--
+ * @Author: your name
+ * @Date: 2020-05-05 14:09:52
+ * @LastEditTime: 2020-05-05 17:18:57
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \OneDrive-Index-Cloudflare-Worker\readme.md
+ -->
 
----  
-# OneDrive Index ( Cloudflare Worker )
+中文 | [English](readme.en.md)
+--- 
+# OneDrive Index ( Cloudflare Worker ) 
 
 ## 🌈 演示地址
 
@@ -18,11 +22,19 @@ const PASS = "password"
 
 2. 在 `Certificates & secrets` 面板创建一个新的 `secret`。
 
-3. 在 `API permissions` 面板， 添加以下权限 `offline_access, Files.Read, Files.Read.All`。
+3. 在 `API permissions` 面板， 添加以下权限 `offline_access, Files.Read, Files.Read.All`。（此权限可以在Microsoft Graph中找到）
 
 4. 使用这个工具 [microsoft-graph-api-auth](https://heymind.github.io/tools/microsoft-graph-api-auth) 获取 `refresh_token` 参数。
 
 5. 在 `Cloudflare Worker` 管理页面创建一个新的 `Worker` ,粘贴 `index.js` 中的代码并替换相关参数。
+
+*6. 访问密码设置（默认关闭）：
+
+```
+const AUTH_ENABLED = true
+const NAME = "admin"
+const PASS = "password"
+```
 
 ## 🔥 新特性 V1.1
 
